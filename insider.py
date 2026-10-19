@@ -14,11 +14,14 @@ import json
 import os
 import time
 import urllib.parse
+import uuid
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
 API = "https://data-api.polymarket.com"
+import grafico
+
 ESTADO = Path(__file__).with_name("vistos.json")
 STATS = Path(__file__).with_name("stats.json")
 ALERTAS = Path(__file__).with_name("alertas.jsonl")
@@ -127,16 +130,32 @@ def formato(trade: dict, p: dict, puntos: int, motivos: list) -> str:
     )
 
 
-def enviar(texto: str) -> bool:
+def _multipart(payload: dict, imagen: str) -> tuple[bytes, str]:
+    b = "----poly" + uuid.uuid4().hex
+    partes = [f"--{b}\r\nContent-Disposition: form-data; name=\"payload_json\"\r\n\r\n"
+              f"{json.dumps(payload)}\r\n".encode()]
+    with open(imagen, "rb") as fh:
+        partes.append(f"--{b}\r\nContent-Disposition: form-data; name=\"files[0]\"; "
+                      f"filename=\"grafico.png\"\r\nContent-Type: image/png\r\n\r\n".encode()
+                      + fh.read() + b"\r\n")
+    partes.append(f"--{b}--\r\n".encode())
+    return b"".join(partes), f"multipart/form-data; boundary={b}"
+
+
+def enviar(texto: str, imagen: str | None = None) -> bool:
     token = os.environ.get("DISCORD_BOT_TOKEN", "")
     canal = os.environ.get("DISCORD_CHANNEL", "")
     if not token or not canal:
         print("(sin token/canal: esto habría enviado)\n" + texto)
         return False
-    datos = json.dumps({"content": texto[:1900], "flags": 4}).encode()
+    payload = {"content": texto[:1900], "flags": 4}
+    if imagen and os.path.exists(imagen):
+        datos, ctype = _multipart(payload, imagen)
+    else:
+        datos, ctype = json.dumps(payload).encode(), "application/json"
     req = urllib.request.Request(
         f"https://discord.com/api/v10/channels/{canal}/messages", data=datos,
-        headers={"Authorization": f"Bot {token}", "Content-Type": "application/json", **UA})
+        headers={"Authorization": f"Bot {token}", "Content-Type": ctype, **UA})
     try:
         with urllib.request.urlopen(req, timeout=20) as r:
             return r.status in (200, 204)
@@ -239,7 +258,12 @@ def main() -> int:
                 puntos -= 2
             if puntos < 3:
                 continue
-            if enviar(formato(t, p, puntos, motivos)):
+            try:
+                png = grafico.para_trade(t, str(Path(__file__).with_name("charts") / f"pm_{int(time.time())}.png"))
+            except Exception as e:
+                print(f"! gráfico: {str(e)[:60]}")
+                png = None
+            if enviar(formato(t, p, puntos, motivos), png):
                 alertas += 1
                 stats["alertas"] += 1
                 try:

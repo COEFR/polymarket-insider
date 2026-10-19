@@ -23,6 +23,9 @@ jobs:
         run: |
           git clone --depth 1 "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" repo
 
+      - name: Dependencias (Pillow para el gráfico)
+        run: python3 -m pip install --quiet "pillow>=10,<13"
+
       - name: Vigilar 4 minutos
         working-directory: repo
         env:

@@ -100,10 +100,10 @@ def enlaces(trade: dict) -> str:
     slug = trade.get("eventSlug") or trade.get("slug") or ""
     wallet = trade.get("proxyWallet") or ""
     poly = f"https://polymarket.com/event/{slug}" if slug else "https://polymarket.com"
-    scan = f"https://polygonscan.com/address/{wallet}" if wallet else ""
+    perfil = f"https://polymarket.com/profile/{wallet}" if wallet else ""
     linea = f"[Polymarket]({poly})"
-    if scan:
-        linea += f" · [Polygonscan]({scan})"
+    if perfil:
+        linea += f" · [Perfil]({perfil})"
     return "🔗 Links\n" + linea
 
 

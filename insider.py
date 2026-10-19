@@ -27,16 +27,29 @@ STATS = Path(__file__).with_name("stats.json")
 ALERTAS = Path(__file__).with_name("alertas.jsonl")
 UA = {"User-Agent": "polymarket-insider/1.0"}
 
-MIN_USD = float(os.environ.get("MIN_USD", "500"))          # apuesta mínima para mirarla
-MAX_EDAD_DIAS = int(os.environ.get("MAX_EDAD_DIAS", "14"))  # wallet "nueva"
+MIN_USD = float(os.environ.get("MIN_USD", "250"))          # apuesta mínima para mirarla
+MAX_EDAD_DIAS = int(os.environ.get("MAX_EDAD_DIAS", "30"))  # wallet "nueva"
 MAX_TRADES = int(os.environ.get("MAX_TRADES", "25"))        # historial corto
 INTERVALO = int(os.environ.get("INTERVALO", "60"))
 
 
-def traer(url: str, timeout: int = 20):
-    req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return json.loads(r.read())
+def traer(url: str, timeout: int = 20, intentos: int = 3):
+    """GET con reintento: la API pública devuelve 429 cuando se le pide mucho."""
+    for i in range(intentos):
+        try:
+            req = urllib.request.Request(url, headers=UA)
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            if e.code in (429, 500, 502, 503) and i < intentos - 1:
+                time.sleep(2 + 2 * i)
+                continue
+            raise
+        except Exception:
+            if i < intentos - 1:
+                time.sleep(1)
+                continue
+            raise
 
 
 def trades_recientes(limite: int = 100) -> list:
@@ -57,19 +70,27 @@ def perfil(wallet: str) -> dict:
         return _perfil_cache[wallet]
     datos = {"edad_dias": None, "trades": None, "valor": None}
     try:
-        suyos = traer(f"{API}/trades?user={urllib.parse.quote(wallet)}&limit=500")
-        if isinstance(suyos, list) and suyos:
-            datos["trades"] = len(suyos)
-            primera = min(int(t["timestamp"]) for t in suyos)
-            datos["edad_dias"] = round((time.time() - primera) / 86400, 1)
+        # primera actividad de la wallet (ASC): la única forma fiable de saber si es nueva.
+        # Contar operaciones no sirve: las apuestas grandes vienen de carteras con cientos.
+        acts = traer(f"{API}/activity?user={urllib.parse.quote(wallet)}&limit=1"
+                     "&sortBy=TIMESTAMP&sortDirection=ASC")
+        if isinstance(acts, list) and acts:
+            datos["edad_dias"] = round((time.time() - int(acts[0]["timestamp"])) / 86400, 1)
     except Exception as e:
-        print(f"! perfil trades: {str(e)[:60]}")
+        print(f"! perfil edad: {str(e)[:60]}")
+    try:
+        suyos = traer(f"{API}/trades?user={urllib.parse.quote(wallet)}&limit=500")
+        if isinstance(suyos, list):
+            datos["trades"] = len(suyos)
+    except Exception:
+        pass
     try:
         valor = traer(f"{API}/value?user={urllib.parse.quote(wallet)}")
         if isinstance(valor, list) and valor:
             datos["valor"] = round(float(valor[0].get("value") or 0), 2)
     except Exception:
         pass
+    time.sleep(0.25)
     _perfil_cache[wallet] = datos
     return datos
 
@@ -86,7 +107,7 @@ def puntuar(trade: dict, p: dict) -> tuple[int, list]:
             puntos += 2; motivos.append(f"wallet de {edad:g} días")
         elif edad <= MAX_EDAD_DIAS:
             puntos += 1; motivos.append(f"wallet de {edad:g} días")
-    if n is not None and n <= MAX_TRADES:
+    if n is not None and n <= 10:
         puntos += 1; motivos.append(f"solo {n} operaciones")
     if usd >= 2000:
         puntos += 2; motivos.append(f"apuesta de ${usd:,.0f}")
@@ -248,14 +269,12 @@ def main() -> int:
                 continue
             stats["candidatos"] += 1
             p = perfil(t.get("proxyWallet") or "")
-            n = p.get("trades")
-            # una wallet con cientos de operaciones es un profesional (o un bot), no alguien
-            # con información: no se avisa, salvo que la apuesta sea enorme.
-            if n is not None and n > MAX_TRADES and usd < 5000:
+            # Solo wallets NUEVAS (primera actividad dentro de MAX_EDAD_DIAS). Si no se pudo
+            # saber la edad, no se avisa: sin ese dato no hay señal.
+            edad = p.get("edad_dias")
+            if edad is None or edad > MAX_EDAD_DIAS:
                 continue
             puntos, motivos = puntuar(t, p)
-            if n is not None and n > MAX_TRADES:
-                puntos -= 2
             if puntos < 3:
                 continue
             try:

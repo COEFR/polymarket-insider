@@ -28,7 +28,7 @@ jobs:
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           DISCORD_CHANNEL: ${{ vars.DISCORD_CHANNEL }}
-          MIN_USD: "500"
+          MIN_USD: "300"
           PYTHONUNBUFFERED: "1"
         run: |
           code=0

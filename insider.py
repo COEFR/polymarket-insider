@@ -20,6 +20,8 @@ from pathlib import Path
 
 API = "https://data-api.polymarket.com"
 ESTADO = Path(__file__).with_name("vistos.json")
+STATS = Path(__file__).with_name("stats.json")
+ALERTAS = Path(__file__).with_name("alertas.jsonl")
 UA = {"User-Agent": "polymarket-insider/1.0"}
 
 MIN_USD = float(os.environ.get("MIN_USD", "500"))          # apuesta mínima para mirarla
@@ -163,8 +165,55 @@ def clave(t: dict) -> str:
     return f"{t.get('proxyWallet')}-{t.get('timestamp')}-{t.get('asset')}-{t.get('size')}-{t.get('price')}"
 
 
+def _hoy() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+
+def cargar_stats() -> dict:
+    try:
+        d = json.loads(STATS.read_text())
+        if d.get("fecha") == _hoy():
+            return d
+    except Exception:
+        pass
+    return {"fecha": _hoy(), "revisados": 0, "candidatos": 0, "alertas": 0}
+
+
+def guardar_stats(d: dict) -> None:
+    try:
+        STATS.write_text(json.dumps(d))
+    except Exception:
+        pass
+
+
+def resumen() -> int:
+    """Resumen del día: cuántos trades se revisaron, cuántos candidatos y cuáles avisaron."""
+    st = cargar_stats()
+    alertas = []
+    try:
+        for ln in ALERTAS.read_text().splitlines()[-50:]:
+            a = json.loads(ln)
+            if a.get("fecha") == st["fecha"]:
+                alertas.append(a)
+    except Exception:
+        pass
+    if alertas:
+        cuerpo = f"🕵️ **Resumen del día** · {st['candidatos']} candidatos de {st['revisados']} trades\n"
+        for a in alertas[-5:]:
+            cuerpo += (f"· {a['wallet'][:6]}…{a['wallet'][-4:]} · ${a['usd']:,.0f} "
+                       f"{a['outcome']} · {a['puntos']}/6 · {a['mercado'][:45]}\n")
+    else:
+        cuerpo = (f"🕵️ **Resumen del día**: sin candidatos que pasen el filtro\n"
+                  f"Revisé {st['revisados']} trades · {st['candidatos']} candidatos con apuesta grande\n")
+    enviar(cuerpo + "🔗 Links\n[Polymarket](https://polymarket.com)")
+    return 0
+
+
 def main() -> int:
+    if "--resumen" in os.sys.argv:
+        return resumen()
     vistos = cargar_vistos()
+    stats = cargar_stats()
     inicio = time.time()
     print(f"inicio · min ${MIN_USD:.0f} · estado {len(vistos)} vistos")
     while time.time() - inicio < 260:
@@ -173,10 +222,12 @@ def main() -> int:
         for t in nuevos:
             vistos.add(clave(t))
         alertas = 0
+        stats["revisados"] += len(nuevos)
         for t in nuevos:
             usd = float(t.get("size") or 0) * float(t.get("price") or 0)
             if usd < MIN_USD:
                 continue
+            stats["candidatos"] += 1
             p = perfil(t.get("proxyWallet") or "")
             n = p.get("trades")
             # una wallet con cientos de operaciones es un profesional (o un bot), no alguien
@@ -190,9 +241,18 @@ def main() -> int:
                 continue
             if enviar(formato(t, p, puntos, motivos)):
                 alertas += 1
+                stats["alertas"] += 1
+                try:
+                    with open(ALERTAS, "a") as fh:
+                        fh.write(json.dumps({"fecha": _hoy(), "wallet": t.get("proxyWallet") or "",
+                                             "mercado": t.get("title") or "", "outcome": t.get("outcome") or "",
+                                             "usd": round(usd, 2), "puntos": puntos}) + "\n")
+                except Exception:
+                    pass
                 print(f"alerta {puntos}/6 · {t.get('title')[:40]} · ${usd:,.0f}")
             time.sleep(1.2)
         guardar_vistos(vistos)
+        guardar_stats(stats)
         print(f"{datetime.now(timezone.utc):%H:%M:%S} nuevos {len(nuevos)} · alertas {alertas} · vistos {len(vistos)}")
         time.sleep(INTERVALO)
     return 0

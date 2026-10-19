@@ -1,0 +1,32 @@
+name: polymarket-insider-resumen
+
+# Un resumen al día en #🕵️-polymarket-insider: cuántos trades se revisaron, cuántos
+# candidatos aparecieron y cuáles avisaron. 12:00 UTC = 08:00 Bolivia.
+on:
+  schedule:
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: polymarket-insider-resumen
+  cancel-in-progress: false
+
+jobs:
+  resumen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Traer el repo
+        run: |
+          git clone --depth 1 "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" repo
+
+      - name: Publicar el resumen
+        working-directory: repo
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CHANNEL: ${{ vars.DISCORD_CHANNEL }}
+          PYTHONUNBUFFERED: "1"
+        run: python3 -u insider.py --resumen

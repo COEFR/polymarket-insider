@@ -20,7 +20,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 API = "https://data-api.polymarket.com"
-import grafico
+import miniatura
 
 ESTADO = Path(__file__).with_name("vistos.json")
 STATS = Path(__file__).with_name("stats.json")
@@ -136,7 +136,7 @@ def _multipart(payload: dict, imagen: str) -> tuple[bytes, str]:
               f"{json.dumps(payload)}\r\n".encode()]
     with open(imagen, "rb") as fh:
         partes.append(f"--{b}\r\nContent-Disposition: form-data; name=\"files[0]\"; "
-                      f"filename=\"grafico.png\"\r\nContent-Type: image/png\r\n\r\n".encode()
+                      f"filename=\"miniatura.png\"\r\nContent-Type: image/png\r\n\r\n".encode()
                       + fh.read() + b"\r\n")
     partes.append(f"--{b}--\r\n".encode())
     return b"".join(partes), f"multipart/form-data; boundary={b}"
@@ -259,9 +259,9 @@ def main() -> int:
             if puntos < 3:
                 continue
             try:
-                png = grafico.para_trade(t, str(Path(__file__).with_name("charts") / f"pm_{int(time.time())}.png"))
+                png = miniatura.para_trade(t, str(Path(__file__).with_name("charts") / f"pm_{int(time.time())}.png"))
             except Exception as e:
-                print(f"! gráfico: {str(e)[:60]}")
+                print(f"! miniatura: {str(e)[:60]}")
                 png = None
             if enviar(formato(t, p, puntos, motivos), png):
                 alertas += 1

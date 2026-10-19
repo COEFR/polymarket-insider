@@ -39,7 +39,7 @@ jobs:
       - name: Guardar el estado
         working-directory: repo
         run: |
-          git add -A vistos.json || true
+          git add -A vistos.json stats.json alertas.jsonl || true
           if git diff --cached --quiet; then exit 0; fi
           git -c user.name="polymarket-insider" -c user.email="bot@users.noreply.github.com" \
               commit -m "vistos $(date -u '+%Y-%m-%d %H:%M UTC')"

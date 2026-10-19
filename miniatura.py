@@ -54,7 +54,26 @@ def por_condicion(condition_id: str) -> str | None:
     return None
 
 
+def por_evento(slug: str) -> str | None:
+    """Segundo respaldo: la imagen del evento (cuando el mercado no tiene arte propio)."""
+    if not slug:
+        return None
+    try:
+        url = f"https://gamma-api.polymarket.com/events?slug={slug}"
+        with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=20) as r:
+            datos = json.loads(r.read())
+        if isinstance(datos, list) and datos:
+            e = datos[0]
+            return e.get("image") or e.get("icon")
+    except Exception as e:
+        print(f"! gamma evento: {str(e)[:60]}")
+    return None
+
+
 def para_trade(trade: dict, salida: str) -> str | None:
-    """Miniatura del mercado: el `icon` del trade o, si falta, la imagen de la API gamma."""
-    url = trade.get("icon") or por_condicion(trade.get("conditionId") or trade.get("market") or "")
+    """Miniatura: icon del trade → imagen del mercado (gamma) → imagen del evento."""
+    cid = trade.get("conditionId") or trade.get("market") or ""
+    url = (trade.get("icon")
+           or por_condicion(cid)
+           or por_evento(trade.get("eventSlug") or trade.get("slug") or ""))
     return descargar(url, salida)

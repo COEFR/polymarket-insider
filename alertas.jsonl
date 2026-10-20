@@ -141,3 +141,6 @@
 {"fecha": "2026-10-20", "wallet": "0xfc801459f093fbbc100c5a6320e67bd11406372d", "mercado": "LoL: Vitality Rising Bees vs G2 HEL - Game 3 Winner", "outcome": "G2 HEL", "usd": 478.64, "puntos": 4}
 {"fecha": "2026-10-20", "wallet": "0xa66bf0b4febba851cf8b698cbdd825b8849f73e8", "mercado": "Fenerbah\u00e7e SK vs. SK Slavia Praha: O/U 3.5", "outcome": "Over", "usd": 388.0, "puntos": 3}
 {"fecha": "2026-10-20", "wallet": "0xa66bf0b4febba851cf8b698cbdd825b8849f73e8", "mercado": "Fenerbah\u00e7e SK vs. SK Slavia Praha: O/U 3.5", "outcome": "Over", "usd": 388.0, "puntos": 3}
+{"fecha": "2026-10-20", "wallet": "0xb250bd7c4d9e41e5c66b4d4ffb338b8fc636d5ab", "mercado": "Fenerbah\u00e7e SK vs. SK Slavia Praha: O/U 6.5", "outcome": "Under", "usd": 324.0, "puntos": 3}
+{"fecha": "2026-10-20", "wallet": "0x9aa1c2cec75db347bbc705a97d3849e35e9665f7", "mercado": "Paris Saint-Germain FC vs. FC Barcelona: O/U 3.5", "outcome": "Under", "usd": 5000.0, "puntos": 4}
+{"fecha": "2026-10-20", "wallet": "0xf2f49d179b07e6a7e4fb3409bc46b05866a249cd", "mercado": "Counter-Strike: fnatic vs PARIVISION - Map 2 Winner", "outcome": "PARIVISION", "usd": 423.66, "puntos": 3}

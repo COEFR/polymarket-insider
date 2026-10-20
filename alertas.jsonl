@@ -147,3 +147,6 @@
 {"fecha": "2026-10-20", "wallet": "0xb250bd7c4d9e41e5c66b4d4ffb338b8fc636d5ab", "mercado": "Fenerbah\u00e7e SK vs. SK Slavia Praha: O/U 6.5", "outcome": "Under", "usd": 324.0, "puntos": 3}
 {"fecha": "2026-10-20", "wallet": "0x9aa1c2cec75db347bbc705a97d3849e35e9665f7", "mercado": "Paris Saint-Germain FC vs. FC Barcelona: O/U 3.5", "outcome": "Under", "usd": 5000.0, "puntos": 4}
 {"fecha": "2026-10-20", "wallet": "0xe4a57385a34b0b32fd86be72efd25cda41003cad", "mercado": "Jets vs. Blues", "outcome": "Jets", "usd": 2360.5, "puntos": 4}
+{"fecha": "2026-10-20", "wallet": "0x842e659f41e11fe15d64f232e385bc930a3dda6b", "mercado": "Will Paris Saint-Germain FC win on 2026-10-20?", "outcome": "Yes", "usd": 483.92, "puntos": 4}
+{"fecha": "2026-10-20", "wallet": "0xa3566f3411369de654e2c83e9fa10392b83bcb94", "mercado": "Will Club Atl\u00e9tico de Madrid win on 2026-10-20?", "outcome": "No", "usd": 549.99, "puntos": 3}
+{"fecha": "2026-10-20", "wallet": "0xfb3fc3fcb11e7ca071650b2bc7e04317102f5447", "mercado": "Will Kylian Mbapp\u00e9 win the 2026 Ballon d'Or?", "outcome": "Yes", "usd": 356.79, "puntos": 3}

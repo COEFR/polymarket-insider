@@ -50,3 +50,5 @@
 {"fecha": "2026-10-19", "wallet": "0x3bd3ec720131f11bb603697d608c4426cef0abf6", "mercado": "Will EC Vit\u00f3ria win on 2026-10-19?", "outcome": "No", "usd": 301.25, "puntos": 3}
 {"fecha": "2026-10-20", "wallet": "0xf8211a88219ac5a846e232cde51a9227efdf8f56", "mercado": "Bitcoin Up or Down - October 19, 7:55PM-8:00PM ET", "outcome": "Down", "usd": 400.0, "puntos": 3}
 {"fecha": "2026-10-20", "wallet": "0x6a7447d219a409806db7b49cdaca57534395ae4b", "mercado": "Bitcoin Up or Down - October 19, 7:55PM-8:00PM ET", "outcome": "Down", "usd": 1000.0, "puntos": 3}
+{"fecha": "2026-10-20", "wallet": "0x6a7447d219a409806db7b49cdaca57534395ae4b", "mercado": "Bitcoin Up or Down - October 19, 7:55PM-8:00PM ET", "outcome": "Down", "usd": 1000.0, "puntos": 3}
+{"fecha": "2026-10-20", "wallet": "0x6a7447d219a409806db7b49cdaca57534395ae4b", "mercado": "Bitcoin Up or Down - October 19, 8:00PM-8:05PM ET", "outcome": "Down", "usd": 1000.0, "puntos": 3}

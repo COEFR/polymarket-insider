@@ -210,3 +210,6 @@
 {"fecha": "2026-10-21", "wallet": "0x8b3271bd0ad4ff27c23656ffa79d2e5662abe51b", "mercado": "Bitcoin Up or Down - October 21, 12:15AM-12:20AM ET", "outcome": "Up", "usd": 904.16, "puntos": 3}
 {"fecha": "2026-10-21", "wallet": "0xb4a509b320e336fd7f8b5eabe8194dc4a07f811e", "mercado": "Bitcoin Up or Down - October 21, 12:25AM-12:30AM ET", "outcome": "Up", "usd": 308.67, "puntos": 3}
 {"fecha": "2026-10-21", "wallet": "0x6de64d3ac2358383498c9e135df693f3bb12c060", "mercado": "Red Wings vs. Kraken", "outcome": "Kraken", "usd": 2100.0, "puntos": 4}
+{"fecha": "2026-10-21", "wallet": "0xb4a509b320e336fd7f8b5eabe8194dc4a07f811e", "mercado": "Bitcoin Up or Down - October 21, 12:25AM-12:30AM ET", "outcome": "Up", "usd": 308.67, "puntos": 3}
+{"fecha": "2026-10-21", "wallet": "0x6de64d3ac2358383498c9e135df693f3bb12c060", "mercado": "Red Wings vs. Kraken", "outcome": "Kraken", "usd": 2100.0, "puntos": 4}
+{"fecha": "2026-10-21", "wallet": "0x667bc0907b6bf7f2909f26f6d996950026a0ffe1", "mercado": "Lightning vs. Golden Knights: O/U 4.5 AND FC Ju\u00e1rez vs. Atlante FC: O/U 0.5", "outcome": "", "usd": 692.0, "puntos": 3}

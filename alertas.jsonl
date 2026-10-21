@@ -258,3 +258,5 @@
 {"fecha": "2026-10-21", "wallet": "0x9b97ec329ba5848c16cec724a5dd72e18df0ca3e", "mercado": "Ningbo Open: Sorana Cirstea vs Sara Bejlek", "outcome": "Sara Bejlek", "usd": 3000.0, "puntos": 4}
 {"fecha": "2026-10-21", "wallet": "0x9b97ec329ba5848c16cec724a5dd72e18df0ca3e", "mercado": "Ningbo Open: Sorana Cirstea vs Sara Bejlek", "outcome": "Sara Bejlek", "usd": 3000.0, "puntos": 4}
 {"fecha": "2026-10-21", "wallet": "0x97c9e90c1a79d4c4d70455a5f2f689826f549ed4", "mercado": "Spread: Clippers (-4.5)", "outcome": "Kings", "usd": 597.0, "puntos": 3}
+{"fecha": "2026-10-21", "wallet": "0x97c9e90c1a79d4c4d70455a5f2f689826f549ed4", "mercado": "Spread: Clippers (-4.5)", "outcome": "Kings", "usd": 597.0, "puntos": 3}
+{"fecha": "2026-10-21", "wallet": "0x8a36da009d97915b11dc1bdea1f6e1361dc44836", "mercado": "Dota 2: Dawn Bulls vs Zero Tenacity - Game 1 Winner", "outcome": "Dawn Bulls", "usd": 476.57, "puntos": 3}

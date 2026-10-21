@@ -342,3 +342,5 @@
 {"fecha": "2026-10-21", "wallet": "0x54acf3d5c744b7603bafe0c5a96771741c0fe45b", "mercado": "Cali: Santiago Rodriguez Taverna vs Gonzalo Bueno", "outcome": "Gonzalo Bueno", "usd": 2000.0, "puntos": 3}
 {"fecha": "2026-10-21", "wallet": "0x529279dda0372d07277456829f27c2151ec3fb5e", "mercado": "Hornets vs. Nets", "outcome": "Nets", "usd": 6580.0, "puntos": 3}
 {"fecha": "2026-10-21", "wallet": "0x4ee6113209778531128f10f3392cc190f92a34ef", "mercado": "Bitcoin Up or Down - October 21, 5:05PM-5:10PM ET", "outcome": "Up", "usd": 319.68, "puntos": 3}
+{"fecha": "2026-10-21", "wallet": "0x529279dda0372d07277456829f27c2151ec3fb5e", "mercado": "Hornets vs. Nets", "outcome": "Nets", "usd": 6580.0, "puntos": 3}
+{"fecha": "2026-10-21", "wallet": "0x4ee6113209778531128f10f3392cc190f92a34ef", "mercado": "Bitcoin Up or Down - October 21, 5:05PM-5:10PM ET", "outcome": "Up", "usd": 319.68, "puntos": 3}

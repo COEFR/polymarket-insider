@@ -496,3 +496,5 @@
 {"fecha": "2026-10-22", "wallet": "0x31f60af21eabb2f85e94bd79f94f189ac4ff80e0", "mercado": "Exact Score: Juventus FC 1 - 3 Stade Rennais FC 1901?", "outcome": "No", "usd": 391.87, "puntos": 3}
 {"fecha": "2026-10-22", "wallet": "0x00efb2be34723cb630f335eed4565709eb14dfd0", "mercado": "GNK Dinamo Zagreb vs. NEC: O/U 5.5", "outcome": "Over", "usd": 448.15, "puntos": 3}
 {"fecha": "2026-10-22", "wallet": "0x00efb2be34723cb630f335eed4565709eb14dfd0", "mercado": "GNK Dinamo Zagreb vs. NEC: O/U 5.5", "outcome": "Over", "usd": 448.15, "puntos": 3}
+{"fecha": "2026-10-22", "wallet": "0x2410ade920a1c0ceaa69b531abae48b893079496", "mercado": "Dota 2: TheBot$ vs Zero Tenacity - Game 1 Winner", "outcome": "Zero Tenacity", "usd": 397.79, "puntos": 3}
+{"fecha": "2026-10-22", "wallet": "0x8ecfe659dbf51cdd775740d526b3f153c83c14e7", "mercado": "Exact Score: GNK Dinamo Zagreb 0 - 1 NEC?", "outcome": "No", "usd": 2070.46, "puntos": 4}

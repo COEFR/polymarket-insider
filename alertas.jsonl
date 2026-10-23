@@ -682,3 +682,5 @@
 {"fecha": "2026-10-23", "wallet": "0x095f9f0d2115a13553bd456a993eb995225b87e6", "mercado": "LoL: Hanwha Life Esports vs Top Esports (BO1) - Worlds Group Stage", "outcome": "Hanwha Life Esports", "usd": 428.32, "puntos": 3}
 {"fecha": "2026-10-23", "wallet": "0x00efb2be34723cb630f335eed4565709eb14dfd0", "mercado": "Widzew Lodz vs. Gornik Zabrze: 1st Half O/U 0.5", "outcome": "Over", "usd": 823.65, "puntos": 3}
 {"fecha": "2026-10-23", "wallet": "0x00efb2be34723cb630f335eed4565709eb14dfd0", "mercado": "Widzew Lodz vs. Gornik Zabrze: 1st Half O/U 0.5", "outcome": "Over", "usd": 823.65, "puntos": 3}
+{"fecha": "2026-10-23", "wallet": "0x2db609f07251db078e02ebac3a2dfd1e99c1fe4f", "mercado": "LoL: Bilibili Gaming vs Movistar KOI (BO1) - Worlds Group Stage", "outcome": "Movistar KOI", "usd": 480.0, "puntos": 4}
+{"fecha": "2026-10-23", "wallet": "0xf2f49d179b07e6a7e4fb3409bc46b05866a249cd", "mercado": "Counter-Strike: Sinners vs Eternal Fire - Map 1 Winner", "outcome": "Sinners", "usd": 637.13, "puntos": 3}

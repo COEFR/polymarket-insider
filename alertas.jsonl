@@ -550,3 +550,6 @@
 {"fecha": "2026-10-23", "wallet": "0x1f3a646ce5cbe2c70270e7a46161d89b7c7b895d", "mercado": "Jets vs. Stars", "outcome": "Stars", "usd": 1950.0, "puntos": 3}
 {"fecha": "2026-10-23", "wallet": "0x6a7447d219a409806db7b49cdaca57534395ae4b", "mercado": "Bitcoin Up or Down - October 22, 9:45PM-9:50PM ET", "outcome": "Up", "usd": 490.0, "puntos": 3}
 {"fecha": "2026-10-23", "wallet": "0x6a7447d219a409806db7b49cdaca57534395ae4b", "mercado": "Bitcoin Up or Down - October 22, 9:45PM-9:50PM ET", "outcome": "Up", "usd": 490.0, "puntos": 3}
+{"fecha": "2026-10-23", "wallet": "0x91e67d77b45558ce69238bf8a79e2e902b1ee9c5", "mercado": "Cavaliers vs. 76ers: O/U 232.5", "outcome": "Under", "usd": 2327.11, "puntos": 5}
+{"fecha": "2026-10-23", "wallet": "0xc060327d48804e4f11ee53408b535a8a3c9380e0", "mercado": "Cavaliers vs. 76ers", "outcome": "76ers", "usd": 547.28, "puntos": 3}
+{"fecha": "2026-10-23", "wallet": "0xe5502f3b033ebcd64233b5ffc43c44c24170be3f", "mercado": "Spread: Thunder (-5.5)", "outcome": "Nuggets", "usd": 545.0, "puntos": 3}

@@ -536,3 +536,4 @@
 {"fecha": "2026-10-22", "wallet": "0x2da98aa5f8ea4556967be2d7770ed51ac8a6f3d2", "mercado": "Cavaliers vs. 76ers", "outcome": "76ers", "usd": 500.0, "puntos": 4}
 {"fecha": "2026-10-23", "wallet": "0x1f3a646ce5cbe2c70270e7a46161d89b7c7b895d", "mercado": "Cavaliers vs. 76ers: O/U 238.5", "outcome": "Over", "usd": 302.23, "puntos": 3}
 {"fecha": "2026-10-23", "wallet": "0x1f3a646ce5cbe2c70270e7a46161d89b7c7b895d", "mercado": "Cavaliers vs. 76ers: O/U 238.5", "outcome": "Over", "usd": 302.23, "puntos": 3}
+{"fecha": "2026-10-23", "wallet": "0xe5502f3b033ebcd64233b5ffc43c44c24170be3f", "mercado": "Spread: Cavaliers (-10.5)", "outcome": "76ers", "usd": 669.27, "puntos": 4}

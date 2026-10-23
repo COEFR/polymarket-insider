@@ -747,3 +747,5 @@
 {"fecha": "2026-10-23", "wallet": "0x2f14fa82cef86c27b4a2e1114c46c855329c040f", "mercado": "LoL: LOS vs T1 (BO1) - Worlds Group Stage", "outcome": "T1", "usd": 870.0, "puntos": 3}
 {"fecha": "2026-10-23", "wallet": "0x2f14fa82cef86c27b4a2e1114c46c855329c040f", "mercado": "LoL: LOS vs T1 (BO1) - Worlds Group Stage", "outcome": "T1", "usd": 870.0, "puntos": 3}
 {"fecha": "2026-10-23", "wallet": "0x91e67d77b45558ce69238bf8a79e2e902b1ee9c5", "mercado": "Mavericks vs. Pacers: O/U 249.5", "outcome": "Under", "usd": 1990.0, "puntos": 3}
+{"fecha": "2026-10-23", "wallet": "0x91e67d77b45558ce69238bf8a79e2e902b1ee9c5", "mercado": "Mavericks vs. Pacers: O/U 249.5", "outcome": "Under", "usd": 1990.0, "puntos": 3}
+{"fecha": "2026-10-23", "wallet": "0x1f3a646ce5cbe2c70270e7a46161d89b7c7b895d", "mercado": "Timberwolves vs. Magic", "outcome": "Magic", "usd": 2200.0, "puntos": 4}

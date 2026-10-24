@@ -809,3 +809,6 @@
 {"fecha": "2026-10-24", "wallet": "0x9697b2aca70df21056088d7094f8d7dfb5bd18e9", "mercado": "Map Handicap: MOUZ (-1.5) vs Liquid (+1.5)", "outcome": "MOUZ", "usd": 375.3, "puntos": 3}
 {"fecha": "2026-10-24", "wallet": "0x92652469e41afc01bff06113ee7ec5ebfe3b7e50", "mercado": "Exact Score: Any Other Score?", "outcome": "No", "usd": 9527.34, "puntos": 4}
 {"fecha": "2026-10-24", "wallet": "0x92652469e41afc01bff06113ee7ec5ebfe3b7e50", "mercado": "Exact Score: Any Other Score?", "outcome": "No", "usd": 9527.34, "puntos": 4}
+{"fecha": "2026-10-24", "wallet": "0xe86aaecf94cad617e1f234f73223f0ed3929a901", "mercado": "Counter-Strike: MOUZ vs Liquid - Map 1 Winner", "outcome": "MOUZ", "usd": 1863.85, "puntos": 3}
+{"fecha": "2026-10-24", "wallet": "0x01463eca67b2f1166bd310adbf0cdff716fcb7c7", "mercado": "Aston Villa FC vs. Manchester City FC: O/U 2.5", "outcome": "Over", "usd": 5000.0, "puntos": 3}
+{"fecha": "2026-10-24", "wallet": "0xf32149a9ca93892112dddd8245ab3be51dcb54ab", "mercado": "Aston Villa FC vs. Manchester City FC: Manchester City FC O/U 0.5 AND Will Eintracht Frankfurt win on 2026-10-24? AND Will Everton FC win on 2026-10-24? AND Will Club Atl\u00e9tico de Madrid win on 2026-10-24?", "outcome": "", "usd": 483.7, "puntos": 3}

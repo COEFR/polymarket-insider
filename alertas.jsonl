@@ -831,3 +831,4 @@
 {"fecha": "2026-10-24", "wallet": "0x92ddbf2b275e105d2477e62d7f5fd6626002c5e5", "mercado": "Dota 2: Team Yandex vs OG - Game 1 Winner", "outcome": "Team Yandex", "usd": 500.0, "puntos": 3}
 {"fecha": "2026-10-24", "wallet": "0xe5502f3b033ebcd64233b5ffc43c44c24170be3f", "mercado": "Luton Town FC vs. Leicester City FC: O/U 2.5", "outcome": "Under", "usd": 303.01, "puntos": 3}
 {"fecha": "2026-10-24", "wallet": "0xe4a57385a34b0b32fd86be72efd25cda41003cad", "mercado": "Sabres vs. Capitals: O/U 6.5", "outcome": "Over", "usd": 3517.03, "puntos": 4}
+{"fecha": "2026-10-24", "wallet": "0x1620416d24f7fe99e0953f23dc5a4f18983a2a1f", "mercado": "LoL: G2 Esports vs LOS (BO1) - Worlds Group Stage AND LoL: CTBC Flying Oyster vs Movistar KOI (BO1) - Worlds Group Stage", "outcome": "", "usd": 978.9, "puntos": 4}

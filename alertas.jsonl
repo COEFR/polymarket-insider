@@ -826,3 +826,5 @@
 {"fecha": "2026-10-24", "wallet": "0xe5502f3b033ebcd64233b5ffc43c44c24170be3f", "mercado": "Aston Villa FC vs. Manchester City FC: O/U 1.5", "outcome": "Under", "usd": 550.0, "puntos": 4}
 {"fecha": "2026-10-24", "wallet": "0xe5502f3b033ebcd64233b5ffc43c44c24170be3f", "mercado": "Spread: Manchester City FC (-2.5)", "outcome": "Manchester City FC", "usd": 363.19, "puntos": 3}
 {"fecha": "2026-10-24", "wallet": "0xe5502f3b033ebcd64233b5ffc43c44c24170be3f", "mercado": "Spread: Manchester City FC (-2.5)", "outcome": "Manchester City FC", "usd": 363.19, "puntos": 3}
+{"fecha": "2026-10-24", "wallet": "0x92ddbf2b275e105d2477e62d7f5fd6626002c5e5", "mercado": "Dota 2: Team Yandex vs OG - Game 1 Winner", "outcome": "Team Yandex", "usd": 500.0, "puntos": 3}
+{"fecha": "2026-10-24", "wallet": "0xe5502f3b033ebcd64233b5ffc43c44c24170be3f", "mercado": "Luton Town FC vs. Leicester City FC: O/U 2.5", "outcome": "Under", "usd": 303.01, "puntos": 3}

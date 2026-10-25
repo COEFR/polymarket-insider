@@ -1060,3 +1060,4 @@
 {"fecha": "2026-10-25", "wallet": "0x8a36da009d97915b11dc1bdea1f6e1361dc44836", "mercado": "Dota 2: CyberHero vs Zero Tenacity - Game 1 Winner", "outcome": "CyberHero", "usd": 446.41, "puntos": 3}
 {"fecha": "2026-10-25", "wallet": "0x9e2cd230d87308510cbf43d15d91a0e937f5a9cb", "mercado": "Counter-Strike: FURIA vs Natus Vincere - Map 1 Winner", "outcome": "Natus Vincere", "usd": 1055.9, "puntos": 4}
 {"fecha": "2026-10-25", "wallet": "0xb35fa198138fc48ddc315ecdc15cb132d31a9f0f", "mercado": "Dota 2: Team Spirit vs Astra Invicta - Game 2 Winner", "outcome": "Team Spirit", "usd": 400.0, "puntos": 3}
+{"fecha": "2026-10-25", "wallet": "0xb4869df67474e4171207d6ea3963c639e6e35b38", "mercado": "Will voter turnout in the 2026 Serbian parliamentary election be 70% or more?", "outcome": "Yes", "usd": 627.83, "puntos": 4}

@@ -1054,3 +1054,6 @@
 {"fecha": "2026-10-25", "wallet": "0xc82f03575f097206a147231b3467f672ba8db8f1", "mercado": "Bitcoin Up or Down - October 25, 12:10PM-12:15PM ET", "outcome": "Up", "usd": 730.67, "puntos": 4}
 {"fecha": "2026-10-25", "wallet": "0xc82f03575f097206a147231b3467f672ba8db8f1", "mercado": "Bitcoin Up or Down - October 25, 12:20PM-12:25PM ET", "outcome": "Down", "usd": 693.76, "puntos": 4}
 {"fecha": "2026-10-25", "wallet": "0xc82f03575f097206a147231b3467f672ba8db8f1", "mercado": "Bitcoin Up or Down - October 25, 12:20PM-12:25PM ET", "outcome": "Down", "usd": 693.76, "puntos": 4}
+{"fecha": "2026-10-25", "wallet": "0x8a36da009d97915b11dc1bdea1f6e1361dc44836", "mercado": "Dota 2: CyberHero vs Zero Tenacity - Game 1 Winner", "outcome": "CyberHero", "usd": 446.41, "puntos": 3}
+{"fecha": "2026-10-25", "wallet": "0x9e2cd230d87308510cbf43d15d91a0e937f5a9cb", "mercado": "Counter-Strike: FURIA vs Natus Vincere - Map 1 Winner", "outcome": "Natus Vincere", "usd": 1055.9, "puntos": 4}
+{"fecha": "2026-10-25", "wallet": "0xb35fa198138fc48ddc315ecdc15cb132d31a9f0f", "mercado": "Dota 2: Team Spirit vs Astra Invicta - Game 2 Winner", "outcome": "Team Spirit", "usd": 400.0, "puntos": 3}

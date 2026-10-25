@@ -1036,3 +1036,5 @@
 {"fecha": "2026-10-25", "wallet": "0x33d0690045a1bef99bfd1d71fbaf145559d826c0", "mercado": "Raptors vs. Timberwolves", "outcome": "Raptors", "usd": 1000.0, "puntos": 4}
 {"fecha": "2026-10-25", "wallet": "0x33d0690045a1bef99bfd1d71fbaf145559d826c0", "mercado": "Raptors vs. Timberwolves", "outcome": "Raptors", "usd": 1000.0, "puntos": 4}
 {"fecha": "2026-10-25", "wallet": "0x083498f10e1994094f2dfd3be2424949d8fb0980", "mercado": "Dota 2: Team Yandex vs 1win - Game 2 Winner", "outcome": "Team Yandex", "usd": 3583.4, "puntos": 5}
+{"fecha": "2026-10-25", "wallet": "0x083498f10e1994094f2dfd3be2424949d8fb0980", "mercado": "Dota 2: Team Yandex vs 1win - Game 2 Winner", "outcome": "Team Yandex", "usd": 3583.4, "puntos": 5}
+{"fecha": "2026-10-25", "wallet": "0xbbb6eee5a43a4bb6f63fc0ca314ab4656a7f4faa", "mercado": "Will the highest temperature in Seoul (Incheon) be 21\u00b0C on October 25?", "outcome": "Yes", "usd": 350.62, "puntos": 3}

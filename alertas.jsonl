@@ -1134,3 +1134,5 @@
 {"fecha": "2026-10-25", "wallet": "0xe5502f3b033ebcd64233b5ffc43c44c24170be3f", "mercado": "FC Barcelona vs. Real Madrid CF: O/U 4.5", "outcome": "Under", "usd": 732.43, "puntos": 4}
 {"fecha": "2026-10-25", "wallet": "0x246a223bb86ce1e844d5dfab0b8a94b15a9b1a33", "mercado": "Will AC Milan win on 2026-10-25?", "outcome": "Yes", "usd": 308.1, "puntos": 4}
 {"fecha": "2026-10-25", "wallet": "0x2eebfe062d75403114fdf2ad65baf3e668cb381e", "mercado": "FC Barcelona vs. Real Madrid CF: O/U 2.5", "outcome": "Over", "usd": 548.23, "puntos": 5}
+{"fecha": "2026-10-25", "wallet": "0x246a223bb86ce1e844d5dfab0b8a94b15a9b1a33", "mercado": "Will AC Milan win on 2026-10-25?", "outcome": "Yes", "usd": 308.1, "puntos": 4}
+{"fecha": "2026-10-25", "wallet": "0x2eebfe062d75403114fdf2ad65baf3e668cb381e", "mercado": "FC Barcelona vs. Real Madrid CF: O/U 2.5", "outcome": "Over", "usd": 548.23, "puntos": 5}
